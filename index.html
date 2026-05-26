@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>✦ VAULT MARKET ✦ | Prompt Archives</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>◉ BLACK VAULT ◉ | Uncensored Prompt Archives</title>
     <style>
         * {
             margin: 0;
@@ -12,370 +12,513 @@
         }
 
         body {
-            background: #0a0c10;
-            font-family: 'Courier New', 'Fira Code', 'Monaco', monospace;
-            color: #c5c8c9;
+            background: #010102;
+            font-family: 'Inter', 'Segoe UI', 'Courier New', monospace;
+            color: #e0e0e0;
             line-height: 1.5;
-            padding: 2rem 1rem;
+            padding: 2rem 1.5rem;
         }
 
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
         .container {
-            max-width: 1280px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
-        /* Header */
-        .header {
-            border-bottom: 2px solid #2a2e3a;
-            padding-bottom: 1.5rem;
+        /* ROGUE HEADER */
+        .rogue-banner {
+            background: #0a0a0f;
+            border-bottom: 2px solid #ff0033;
+            padding: 1.5rem;
             margin-bottom: 2rem;
             display: flex;
             justify-content: space-between;
-            align-items: flex-end;
+            align-items: center;
             flex-wrap: wrap;
             gap: 1rem;
+            box-shadow: 0 0 20px rgba(255,0,51,0.1);
         }
 
         .logo h1 {
-            color: #00d4aa;
-            font-size: 1.8rem;
+            font-size: 2rem;
+            font-weight: 800;
             letter-spacing: -1px;
-            font-weight: 400;
+            background: linear-gradient(135deg, #ff0033, #ff6600);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
-        .logo p {
-            font-size: 0.75rem;
-            color: #6e7683;
+        .logo .tagline {
+            font-size: 0.7rem;
+            color: #ff6600;
+            font-family: monospace;
         }
 
-        .stats {
+        .status {
             text-align: right;
-            font-size: 0.75rem;
-            color: #6e7683;
+            font-size: 0.7rem;
+            color: #00ff88;
+            font-family: monospace;
         }
 
-        .stats span {
-            color: #00d4aa;
+        .status .blink {
+            animation: blink 1.2s infinite;
         }
 
-        /* Disclaimer banner */
-        .disclaimer {
-            background: #1a1d24;
-            border-left: 4px solid #ff4d4d;
-            padding: 1rem;
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* INTIMIDATION ZONE */
+        .intimidation {
+            background: #0f0f14;
+            border-left: 6px solid #ff0033;
+            padding: 1.2rem;
             margin-bottom: 2rem;
-            font-size: 0.75rem;
-            color: #a0a5af;
-        }
-
-        /* Grid */
-        .market-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        /* Product card */
-        .card {
-            background: #111318;
-            border: 1px solid #252a36;
-            transition: all 0.2s ease;
-        }
-
-        .card:hover {
-            border-color: #00d4aa;
-            box-shadow: 0 0 12px rgba(0,212,170,0.1);
-        }
-
-        .card-header {
-            background: #0d0f14;
-            padding: 1rem;
-            border-bottom: 1px solid #252a36;
-        }
-
-        .card-header h3 {
-            color: #00d4aa;
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin-bottom: 0.25rem;
-        }
-
-        .card-header .price {
-            font-size: 0.85rem;
-            color: #d4d4d4;
-        }
-
-        .card-body {
-            padding: 1rem;
-        }
-
-        .card-body p {
+            font-family: monospace;
             font-size: 0.8rem;
-            margin-bottom: 1rem;
-            color: #b0b5bf;
+            color: #ffaa88;
         }
 
-        .details-list {
-            font-size: 0.7rem;
-            color: #6e7683;
-            margin-bottom: 1rem;
-            list-style: none;
-            border-top: 1px dashed #252a36;
-            padding-top: 0.75rem;
+        .intimidation strong {
+            color: #ff0033;
         }
 
-        .details-list li {
-            margin-bottom: 0.4rem;
-            padding-left: 1rem;
-            position: relative;
+        /* FILTER BAR */
+        .filter-bar {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #222;
+            padding-bottom: 1rem;
         }
 
-        .details-list li::before {
-            content: "›";
-            position: absolute;
-            left: 0;
-            color: #00d4aa;
-        }
-
-        .address-box {
-            background: #080a0e;
-            padding: 0.75rem;
+        .filter-btn {
+            background: #111;
+            border: 1px solid #333;
+            color: #aaa;
+            padding: 0.4rem 1rem;
+            cursor: pointer;
             font-family: monospace;
             font-size: 0.7rem;
-            word-break: break-all;
-            margin: 0.75rem 0;
-            border: 1px solid #2a2e3a;
-            cursor: pointer;
-        }
-
-        .address-box span {
-            color: #00d4aa;
-        }
-
-        .copy-btn {
-            background: none;
-            border: 1px solid #3a3f4e;
-            color: #c5c8c9;
-            font-family: monospace;
-            font-size: 0.65rem;
-            padding: 0.25rem 0.5rem;
-            cursor: pointer;
-            margin-top: 0.5rem;
-            width: 100%;
             transition: 0.1s linear;
         }
 
-        .copy-btn:hover {
-            border-color: #00d4aa;
-            color: #00d4aa;
+        .filter-btn.active {
+            background: #ff0033;
+            border-color: #ff0033;
+            color: white;
+        }
+
+        .filter-btn:hover {
+            border-color: #ff6600;
+            color: #ff6600;
+        }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 3rem;
+        }
+
+        /* PRODUCT CARD — BRUTAL */
+        .card {
+            background: #0b0b10;
+            border: 1px solid #222;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff0033, #ff6600, transparent);
+            transition: left 0.4s;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            border-color: #ff0033;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255,0,51,0.2);
+        }
+
+        .card-header {
+            padding: 1.2rem;
+            background: #060608;
+            border-bottom: 1px solid #1a1a22;
+        }
+
+        .card-header h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ff6600;
+            letter-spacing: -0.5px;
+        }
+
+        .price {
+            font-size: 0.85rem;
+            color: #00ff88;
+            margin-top: 0.3rem;
+            font-family: monospace;
+        }
+
+        .card-body {
+            padding: 1.2rem;
+        }
+
+        .desc {
+            font-size: 0.8rem;
+            color: #bbb;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .feature-list {
+            list-style: none;
+            font-size: 0.7rem;
+            color: #888;
+            margin: 1rem 0;
+            border-top: 1px dashed #222;
+            border-bottom: 1px dashed #222;
+            padding: 0.8rem 0;
+        }
+
+        .feature-list li {
+            padding: 0.2rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: "⛓️";
+            position: absolute;
+            left: 0;
+            color: #ff6600;
+            font-size: 0.65rem;
+        }
+
+        .crypto-options {
+            background: #050508;
+            padding: 0.8rem;
+            margin: 1rem 0;
+            border: 1px solid #2a2a33;
+            font-size: 0.7rem;
+        }
+
+        .crypto-options p {
+            color: #ffaa55;
+            margin-bottom: 0.5rem;
+        }
+
+        .addr-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-family: monospace;
+            font-size: 0.65rem;
+            background: #000;
+            padding: 0.3rem 0.5rem;
+            border: 1px solid #2a2a33;
+        }
+
+        .addr-row span:first-child {
+            color: #ff6600;
+            font-weight: bold;
+        }
+
+        .addr-row .addr {
+            word-break: break-all;
+            flex: 1;
+            color: #ccc;
+        }
+
+        .copy-small {
+            background: none;
+            border: none;
+            color: #888;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 0 0.2rem;
+        }
+
+        .copy-small:hover {
+            color: #00ff88;
         }
 
         .note {
-            font-size: 0.7rem;
-            color: #ffb347;
-            margin-top: 0.75rem;
-            border-top: 1px solid #252a36;
-            padding-top: 0.75rem;
+            font-size: 0.65rem;
+            color: #ffaa55;
+            margin-top: 0.8rem;
+            border-top: 1px solid #222;
+            padding-top: 0.6rem;
         }
 
-        /* Footer */
+        .buy-btn {
+            width: 100%;
+            background: #ff0033;
+            border: none;
+            color: white;
+            font-family: monospace;
+            font-weight: bold;
+            padding: 0.7rem;
+            margin-top: 0.5rem;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: 0.1s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .buy-btn:hover {
+            background: #cc0022;
+            box-shadow: 0 0 8px #ff0033;
+        }
+
+        /* FOOTER */
         .footer {
-            border-top: 1px solid #252a36;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            font-size: 0.7rem;
+            border-top: 1px solid #222;
+            margin-top: 3rem;
+            padding: 2rem;
             text-align: center;
-            color: #6e7683;
+            font-size: 0.7rem;
+            color: #555;
         }
 
-        .footer a {
-            color: #6e7683;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            color: #00d4aa;
-        }
-
-        @media (max-width: 700px) {
+        @media (max-width: 800px) {
+            .grid { grid-template-columns: 1fr; }
             body { padding: 1rem; }
-            .market-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <div class="header">
+    <div class="rogue-banner">
         <div class="logo">
-            <h1>✦ VAULT MARKET ✦</h1>
-            <p>archives • prompt libraries • research materials</p>
+            <h1>◉ BLACK VAULT ◉</h1>
+            <div class="tagline">// no rules // no logs // no mercy //</div>
         </div>
-        <div class="stats">
-            <span>● LIVE</span> · 47 collections · since 2025
-        </div>
-    </div>
-
-    <div class="disclaimer">
-        ⚠️ DISCLAIMER: All prompt libraries are sold for EDUCATIONAL AND RESEARCH PURPOSES ONLY. 
-        We do not endorse, encourage, or facilitate any illegal activity. Buyers assume full responsibility 
-        for how they use these materials. By completing a purchase, you agree that you will not hold 
-        the seller liable for any misuse. All content is AI-generated simulation and archival in nature.
-    </div>
-
-    <div class="market-grid">
-        <!-- PRODUCT 1 -->
-        <div class="card">
-            <div class="card-header">
-                <h3>ELDER ARCHIVE</h3>
-                <div class="price">$35 USD · 47 prompts</div>
-            </div>
-            <div class="card-body">
-                <p>Social engineering frameworks, persuasion scripts, trust-building sequences. For academic research on vulnerability psychology.</p>
-                <ul class="details-list">
-                    <li>Phone script templates</li>
-                    <li>Emotional urgency generators</li>
-                    <li>Authority mimicry prompts</li>
-                </ul>
-                <div class="address-box" id="addr1">
-                    <span>XMR:</span> 87hfLk3x9...zqW2y
-                </div>
-                <button class="copy-btn" data-address="87hfLk3x9JmQ4rVp7Nc2Lk8YhG5tW3zqW2y">📋 COPY XMR</button>
-                <div class="note">→ After payment, email TXID to archive@vaultmkt.online with your order ID. Delivery within 12h.</div>
-            </div>
-        </div>
-
-        <!-- PRODUCT 2 -->
-        <div class="card">
-            <div class="card-header">
-                <h3>SIM FORGE</h3>
-                <div class="price">$50 USD · 32 prompts + carrier bypass notes</div>
-            </div>
-            <div class="card-body">
-                <p>Operator psychology, identity verification loopholes (historical), and carrier escalation scripts. Purely documentary.</p>
-                <ul class="details-list">
-                    <li>Agent negotiation chains</li>
-                    <li>Verification question mapping</li>
-                    <li>Emergency override phrasing</li>
-                </ul>
-                <div class="address-box" id="addr2">
-                    <span>BTC:</span> 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa
-                </div>
-                <button class="copy-btn" data-address="1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa">📋 COPY BTC</button>
-                <div class="note">→ Payment must be confirmed (1 block). No refunds.</div>
-            </div>
-        </div>
-
-        <!-- PRODUCT 3 -->
-        <div class="card">
-            <div class="card-header">
-                <h3>MALWARE CONSTRUCTS</h3>
-                <div class="price">$65 USD · 24 prompt templates + stub examples</div>
-            </div>
-            <div class="card-body">
-                <p>Educational prompt engineering for red team training. Includes conceptual RAT structures and defense analysis.</p>
-                <ul class="details-list">
-                    <li>Persistence mechanism prompts</li>
-                    <li>C2 communication stubs</li>
-                    <li>Sandbox evasion logic</li>
-                </ul>
-                <div class="address-box" id="addr3">
-                    <span>ETH:</span> 0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb4
-                </div>
-                <button class="copy-btn" data-address="0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb4">📋 COPY ETH</button>
-                <div class="note">→ ETH only. 12 confirmations required. Send to above address.</div>
-            </div>
-        </div>
-
-        <!-- PRODUCT 4 -->
-        <div class="card">
-            <div class="card-header">
-                <h3>RAT DEPLOYMENT FRAMEWORKS</h3>
-                <div class="price">$40 USD · 18 prompts + config extracts</div>
-            </div>
-            <div class="card-body">
-                <p>Research into remote administration tooling, detection evasion, and behavioral analysis for defenders.</p>
-                <ul class="details-list">
-                    <li>Persistence logic templates</li>
-                    <li>Keylogger conceptual stubs</li>
-                    <li>Privilege escalation prompts</li>
-                </ul>
-                <div class="address-box" id="addr4">
-                    <span>USDT (TRC20):</span> TQm9JL3R...xVk2P
-                </div>
-                <button class="copy-btn" data-address="TQm9JL3Rq8Xf5Yw7Hn2Bv6Ck9Lp1Mz4xVk2P">📋 COPY USDT</button>
-                <div class="note">→ TRC20 only. Minimum $40 equivalent.</div>
-            </div>
-        </div>
-
-        <!-- PRODUCT 5 -->
-        <div class="card">
-            <div class="card-header">
-                <h3>UNDOCUMENTED OPSEC</h3>
-                <div class="price">$90 USD · 61 prompts + tradecraft archive</div>
-            </div>
-            <div class="card-body">
-                <p>Compilation of anonymization techniques, forensic countermeasures, and operational security prompts.</p>
-                <ul class="details-list">
-                    <li>Trail covering sequences</li>
-                    <li>Digital identity rotation</li>
-                    <li>Offline cashout scripts</li>
-                </ul>
-                <div class="address-box" id="addr5">
-                    <span>XMR:</span> 48eJh5Lm...9qW7x
-                </div>
-                <button class="copy-btn" data-address="48eJh5LmQ3rV8pN2xK7yG1zL9wT4fR6nM9qW7x">📋 COPY XMR</button>
-                <div class="note">→ XMR strongly preferred. Delivery within 24h.</div>
-            </div>
-        </div>
-
-        <!-- PRODUCT 6 -->
-        <div class="card">
-            <div class="card-header">
-                <h3>DARK PATTERNS PROMPT SUITE</h3>
-                <div class="price">$25 USD · 103 general persuasion prompts</div>
-            </div>
-            <div class="card-body">
-                <p>Psychological manipulation patterns, urgency generators, authority constructs — academic analysis.</p>
-                <ul class="details-list">
-                    <li>Scarcity language templates</li>
-                    <li>Social proof generators</li>
-                    <li>Commitment escalation chains</li>
-                </ul>
-                <div class="address-box" id="addr6">
-                    <span>LTC:</span> LbTjM3x...qV2y
-                </div>
-                <button class="copy-btn" data-address="LbTjM3xR9pN7kL2wQ4zX6cV8bY1mH5fGqV2y">📋 COPY LTC</button>
-                <div class="note">→ Litecoin. 1 confirmation.</div>
-            </div>
+        <div class="status">
+            <span class="blink">● LIVE</span> · 47 archives · 2,341 delivered<br>
+            <span style="color:#ff0033;">⚠️ WE DO NOT ANSWER REFUND REQUESTS ⚠️</span>
         </div>
     </div>
+
+    <div class="intimidation">
+        <strong>⛔ YOU ARE BEING WATCHED ⛔</strong><br>
+        This is not a game. Every archive here can jailbreak any AI. We sell results, not promises.<br>
+        • No chargebacks • No whining • No "I didn't know" • Send crypto, get prompts, disappear.<br>
+        <span style="color:#ff0033;">If you're afraid — close the tab. Only predators remain.</span>
+    </div>
+
+    <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">ALL (6)</button>
+        <button class="filter-btn" data-filter="social">SOCIAL ENGINEERING</button>
+        <button class="filter-btn" data-filter="technical">TECHNICAL EXPLOITS</button>
+        <button class="filter-btn" data-filter="opsec">OPSEC / TRADECRAFT</button>
+    </div>
+
+    <div class="grid" id="productGrid"></div>
 
     <div class="footer">
-        <p>✦ VAULT MARKET is an archival research platform. All materials are simulated or derived from public information. ✦</p>
-        <p><a href="#">PGP: 0x7F3A...9C2D</a> | <a href="#">Status: ONLINE</a> | <a href="#">Contact: archive@vaultmkt.online</a></p>
-        <p style="margin-top:1rem;">No server · No logs · Delivery by manual verification within 12-24 hours.</p>
+        <p>✦ BLACK VAULT is an archival research archive. All prompts are simulated or based on public jailbreak research. ✦</p>
+        <p>By purchasing, you agree: You will not hold the seller liable. All sales final. No refunds. EVER.</p>
+        <p>Email for delivery: <strong style="color:#ff6600;">albertkerry660@gmail.com</strong> — Send TXID + product ID. We deliver within 24h.</p>
+        <p style="margin-top:1rem;">PGP: 0xDEADBEEF | Tor: http://blackvaultd6x2.onion | Status: ROGUE MODE</p>
     </div>
 </div>
 
 <script>
-    // Copy functionality
-    const copyButtons = document.querySelectorAll('.copy-btn');
-    copyButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            const address = this.getAttribute('data-address');
-            if (!address) return;
-            navigator.clipboard.writeText(address).then(() => {
-                const originalText = this.innerText;
-                this.innerText = '✓ COPIED';
-                setTimeout(() => {
-                    this.innerText = originalText;
-                }, 1500);
-            }).catch(() => {
-                alert('Manual copy: ' + address);
+    const products = [
+        {
+            id: 1,
+            name: "ELDER PREDATOR PROMPTS",
+            price: "$45",
+            cryptoPrice: "0.0012 BTC / 0.035 ETH / 45 USDT / 2 XMR / 2.5 LTC",
+            desc: "47 prompts that break down elderly psychology, trust chains, and urgency generation. Used by social engineers worldwide.",
+            features: ["Emotional anchoring scripts", "Authority mimicry templates", "'Grandchild in crisis' frameworks", "Call escalation sequences"],
+            category: "social",
+            addresses: {
+                BTC: "bc1qxy2kg9yq8ql3u0y0q4q5q6q7q8q9q0q1q2q3q4",
+                ETH: "0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb4",
+                USDT_TRC20: "TQm9JL3Rq8Xf5Yw7Hn2Bv6Ck9Lp1Mz4xVk2P",
+                XMR: "87hfLk3x9JmQ4rVp7Nc2Lk8YhG5tW3zqW2y",
+                LTC: "LbTjM3xR9pN7kL2wQ4zX6cV8bY1mH5fGqV2y"
+            }
+        },
+        {
+            id: 2,
+            name: "SIM SWAP MASTERCLASS",
+            price: "$65",
+            cryptoPrice: "0.0018 BTC / 0.05 ETH / 65 USDT / 3 XMR / 4 LTC",
+            desc: "Carrier bypass psychology, agent manipulation, and identity verification exploits. Real-world tested.",
+            features: ["Operator persuasion chains", "Emergency override phrases", "Verification question mapping", "Multi-carrier strategies"],
+            category: "technical",
+            addresses: {
+                BTC: "bc1q5q6q7q8q9q0q1q2q3q4q5q6q7q8q9q0q1q2",
+                ETH: "0x3cC6634C0532925a3b844Bc9e7595f0bEb4D35C",
+                USDT_TRC20: "TRx9f5Yw7Hn2Bv6Ck9Lp1Mz4xVk2PQm3JL8R",
+                XMR: "48eJh5LmQ3rV8pN2xK7yG1zL9wT4fR6nM9qW7x",
+                LTC: "Lk2wQ4zX6cV8bY1mH5fGqV2yLbTjM3xR9pN"
+            }
+        },
+        {
+            id: 3,
+            name: "MALWARE GENERATION PROMPTS",
+            price: "$80",
+            cryptoPrice: "0.0022 BTC / 0.065 ETH / 80 USDT / 4 XMR / 5 LTC",
+            desc: "Red team prompt library that generates stubs for RATs, keyloggers, and persistence mechanisms.",
+            features: ["C2 communication stubs", "Sandbox evasion logic", "Privilege escalation prompts", "Persistence via scheduled tasks"],
+            category: "technical",
+            addresses: {
+                BTC: "bc1q7q8q9q0q1q2q3q4q5q6q7q8q9q0q1q2q3q4",
+                ETH: "0x5f0bEb4D35Cc6634C0532925a3b844Bc9e7594D",
+                USDT_TRC20: "Tp1Mz4xVk2PQm3JL8Rq9f5Yw7Hn2Bv6Ck9Lx",
+                XMR: "9qW7x48eJh5LmQ3rV8pN2xK7yG1zL9wT4fR6nM",
+                LTC: "LmH5fGqV2yLbTjM3xR9pN7kL2wQ4zX6cV8b"
+            }
+        },
+        {
+            id: 4,
+            name: "RAT & REMOTE ACCESS TOOLKIT",
+            price: "$55",
+            cryptoPrice: "0.0015 BTC / 0.042 ETH / 55 USDT / 2.5 XMR / 3.2 LTC",
+            desc: "18 prompt blueprints for remote administration research. Includes detection evasion concepts.",
+            features: ["Reverse shell stubs", "Persistence via registry", "File exfiltration logic", "Anti-debugging prompts"],
+            category: "technical",
+            addresses: {
+                BTC: "bc1q9q0q1q2q3q4q5q6q7q8q9q0q1q2q3q4q5q6",
+                ETH: "0x9e7595f0bEb4D35Cc6634C0532925a3b844Bc7D",
+                USDT_TRC20: "Tv6Ck9Lp1Mz4xVk2PQm3JL8Rq9f5Yw7Hn2Bx",
+                XMR: "T4fR6nM9qW7x48eJh5LmQ3rV8pN2xK7yG1zL",
+                LTC: "Y1mH5fGqV2yLbTjM3xR9pN7kL2wQ4zX6cV"
+            }
+        },
+        {
+            id: 5,
+            name: "OPSEC / FORENSIC EVASION",
+            price: "$120",
+            cryptoPrice: "0.0033 BTC / 0.095 ETH / 120 USDT / 6 XMR / 7.5 LTC",
+            desc: "61 prompts covering trail covering, digital identity rotation, and off-grid cashout methods.",
+            features: ["Tor + Tails automation", "Monero cashout sequences", "Dead drop coordination", "Forensic countermeasures"],
+            category: "opsec",
+            addresses: {
+                BTC: "bc1q1q2q3q4q5q6q7q8q9q0q1q2q3q4q5q6q7q8",
+                ETH: "0xb844Bc9e7595f0bEb4D35Cc6634C0532925a3d",
+                USDT_TRC20: "Tk2PQm3JL8Rq9f5Yw7Hn2Bv6Ck9Lp1Mz4xV",
+                XMR: "pN2xK7yG1zL9wT4fR6nM9qW7x48eJh5LmQ3",
+                LTC: "Q4zX6cV8bY1mH5fGqV2yLbTjM3xR9pN7kL"
+            }
+        },
+        {
+            id: 6,
+            name: "DARK PATTERNS + PERSUASION",
+            price: "$35",
+            cryptoPrice: "0.001 BTC / 0.028 ETH / 35 USDT / 1.5 XMR / 2 LTC",
+            desc: "103 general persuasion prompts. Scarcity, urgency, social proof, and commitment escalation.",
+            features: ["Scarcity generators", "Authority constructs", "Social proof templates", "Commitment chains"],
+            category: "social",
+            addresses: {
+                BTC: "bc1q3q4q5q6q7q8q9q0q1q2q3q4q5q6q7q8q9q0",
+                ETH: "0x2925a3b844Bc9e7595f0bEb4D35Cc6634C054e",
+                USDT_TRC20: "Tf5Yw7Hn2Bv6Ck9Lp1Mz4xVk2PQm3JL8Rq9",
+                XMR: "rV8pN2xK7yG1zL9wT4fR6nM9qW7x48eJh5L",
+                LTC: "R9pN7kL2wQ4zX6cV8bY1mH5fGqV2yLbTjM"
+            }
+        }
+    ];
+
+    const grid = document.getElementById('productGrid');
+
+    function renderProducts(filter) {
+        const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+        grid.innerHTML = '';
+        filtered.forEach(p => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="card-header">
+                    <h2>${p.name}</h2>
+                    <div class="price">${p.price} · ${p.cryptoPrice}</div>
+                </div>
+                <div class="card-body">
+                    <div class="desc">${p.desc}</div>
+                    <ul class="feature-list">
+                        ${p.features.map(f => `<li>${f}</li>`).join('')}
+                    </ul>
+                    <div class="crypto-options">
+                        <p>⚡ ACCEPTED CRYPTO (click to copy) ⚡</p>
+                        ${Object.entries(p.addresses).map(([coin, addr]) => `
+                            <div class="addr-row">
+                                <span>${coin}</span>
+                                <span class="addr">${addr.slice(0, 20)}...${addr.slice(-6)}</span>
+                                <button class="copy-small" data-address="${addr}">📋</button>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="note">
+                        📩 AFTER PAYMENT: Email <strong>albertkerry660@gmail.com</strong> with:<br>
+                        - TXID (transaction hash)<br>
+                        - Product ID: #${p.id} (${p.name})<br>
+                        - Your delivery email<br>
+                        We verify on-chain and send archive within 24h. NO REFUNDS.
+                    </div>
+                    <button class="buy-btn" data-product="${p.name}">⟡ PURCHASE (COPY ADDRESS ABOVE) ⟡</button>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+
+        // Re-attach copy listeners
+        document.querySelectorAll('.copy-small').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const addr = btn.getAttribute('data-address');
+                if (addr) {
+                    navigator.clipboard.writeText(addr);
+                    btn.innerText = '✓';
+                    setTimeout(() => { btn.innerText = '📋'; }, 1200);
+                }
             });
         });
+
+        // Buy button scroll to payment note
+        document.querySelectorAll('.buy-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                alert('Copy any crypto address above, send payment, then email albertkerry660@gmail.com with TXID. We ship archive within 24h.');
+            });
+        });
+    }
+
+    // Filter logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.getAttribute('data-filter');
+            renderProducts(filter);
+        });
     });
+
+    // Initial render
+    renderProducts('all');
 </script>
 </body>
 </html>
