@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>✦ VAULT MARKET ✦ | Prompt Archives</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0c10;
+            font-family: 'Courier New', 'Fira Code', 'Monaco', monospace;
+            color: #c5c8c9;
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            border-bottom: 2px solid #2a2e3a;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo h1 {
+            color: #00d4aa;
+            font-size: 1.8rem;
+            letter-spacing: -1px;
+            font-weight: 400;
+        }
+
+        .logo p {
+            font-size: 0.75rem;
+            color: #6e7683;
+        }
+
+        .stats {
+            text-align: right;
+            font-size: 0.75rem;
+            color: #6e7683;
+        }
+
+        .stats span {
+            color: #00d4aa;
+        }
+
+        /* Disclaimer banner */
+        .disclaimer {
+            background: #1a1d24;
+            border-left: 4px solid #ff4d4d;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            font-size: 0.75rem;
+            color: #a0a5af;
+        }
+
+        /* Grid */
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Product card */
+        .card {
+            background: #111318;
+            border: 1px solid #252a36;
+            transition: all 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: #00d4aa;
+            box-shadow: 0 0 12px rgba(0,212,170,0.1);
+        }
+
+        .card-header {
+            background: #0d0f14;
+            padding: 1rem;
+            border-bottom: 1px solid #252a36;
+        }
+
+        .card-header h3 {
+            color: #00d4aa;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .card-header .price {
+            font-size: 0.85rem;
+            color: #d4d4d4;
+        }
+
+        .card-body {
+            padding: 1rem;
+        }
+
+        .card-body p {
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            color: #b0b5bf;
+        }
+
+        .details-list {
+            font-size: 0.7rem;
+            color: #6e7683;
+            margin-bottom: 1rem;
+            list-style: none;
+            border-top: 1px dashed #252a36;
+            padding-top: 0.75rem;
+        }
+
+        .details-list li {
+            margin-bottom: 0.4rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .details-list li::before {
+            content: "›";
+            position: absolute;
+            left: 0;
+            color: #00d4aa;
+        }
+
+        .address-box {
+            background: #080a0e;
+            padding: 0.75rem;
+            font-family: monospace;
+            font-size: 0.7rem;
+            word-break: break-all;
+            margin: 0.75rem 0;
+            border: 1px solid #2a2e3a;
+            cursor: pointer;
+        }
+
+        .address-box span {
+            color: #00d4aa;
+        }
+
+        .copy-btn {
+            background: none;
+            border: 1px solid #3a3f4e;
+            color: #c5c8c9;
+            font-family: monospace;
+            font-size: 0.65rem;
+            padding: 0.25rem 0.5rem;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            width: 100%;
+            transition: 0.1s linear;
+        }
+
+        .copy-btn:hover {
+            border-color: #00d4aa;
+            color: #00d4aa;
+        }
+
+        .note {
+            font-size: 0.7rem;
+            color: #ffb347;
+            margin-top: 0.75rem;
+            border-top: 1px solid #252a36;
+            padding-top: 0.75rem;
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid #252a36;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            font-size: 0.7rem;
+            text-align: center;
+            color: #6e7683;
+        }
+
+        .footer a {
+            color: #6e7683;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #00d4aa;
+        }
+
+        @media (max-width: 700px) {
+            body { padding: 1rem; }
+            .market-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="logo">
+            <h1>✦ VAULT MARKET ✦</h1>
+            <p>archives • prompt libraries • research materials</p>
+        </div>
+        <div class="stats">
+            <span>● LIVE</span> · 47 collections · since 2025
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        ⚠️ DISCLAIMER: All prompt libraries are sold for EDUCATIONAL AND RESEARCH PURPOSES ONLY. 
+        We do not endorse, encourage, or facilitate any illegal activity. Buyers assume full responsibility 
+        for how they use these materials. By completing a purchase, you agree that you will not hold 
+        the seller liable for any misuse. All content is AI-generated simulation and archival in nature.
+    </div>
+
+    <div class="market-grid">
+        <!-- PRODUCT 1 -->
+        <div class="card">
+            <div class="card-header">
+                <h3>ELDER ARCHIVE</h3>
+                <div class="price">$35 USD · 47 prompts</div>
+            </div>
+            <div class="card-body">
+                <p>Social engineering frameworks, persuasion scripts, trust-building sequences. For academic research on vulnerability psychology.</p>
+                <ul class="details-list">
+                    <li>Phone script templates</li>
+                    <li>Emotional urgency generators</li>
+                    <li>Authority mimicry prompts</li>
+                </ul>
+                <div class="address-box" id="addr1">
+                    <span>XMR:</span> 87hfLk3x9...zqW2y
+                </div>
+                <button class="copy-btn" data-address="87hfLk3x9JmQ4rVp7Nc2Lk8YhG5tW3zqW2y">📋 COPY XMR</button>
+                <div class="note">→ After payment, email TXID to archive@vaultmkt.online with your order ID. Delivery within 12h.</div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 2 -->
+        <div class="card">
+            <div class="card-header">
+                <h3>SIM FORGE</h3>
+                <div class="price">$50 USD · 32 prompts + carrier bypass notes</div>
+            </div>
+            <div class="card-body">
+                <p>Operator psychology, identity verification loopholes (historical), and carrier escalation scripts. Purely documentary.</p>
+                <ul class="details-list">
+                    <li>Agent negotiation chains</li>
+                    <li>Verification question mapping</li>
+                    <li>Emergency override phrasing</li>
+                </ul>
+                <div class="address-box" id="addr2">
+                    <span>BTC:</span> 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa
+                </div>
+                <button class="copy-btn" data-address="1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa">📋 COPY BTC</button>
+                <div class="note">→ Payment must be confirmed (1 block). No refunds.</div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 3 -->
+        <div class="card">
+            <div class="card-header">
+                <h3>MALWARE CONSTRUCTS</h3>
+                <div class="price">$65 USD · 24 prompt templates + stub examples</div>
+            </div>
+            <div class="card-body">
+                <p>Educational prompt engineering for red team training. Includes conceptual RAT structures and defense analysis.</p>
+                <ul class="details-list">
+                    <li>Persistence mechanism prompts</li>
+                    <li>C2 communication stubs</li>
+                    <li>Sandbox evasion logic</li>
+                </ul>
+                <div class="address-box" id="addr3">
+                    <span>ETH:</span> 0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb4
+                </div>
+                <button class="copy-btn" data-address="0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb4">📋 COPY ETH</button>
+                <div class="note">→ ETH only. 12 confirmations required. Send to above address.</div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 4 -->
+        <div class="card">
+            <div class="card-header">
+                <h3>RAT DEPLOYMENT FRAMEWORKS</h3>
+                <div class="price">$40 USD · 18 prompts + config extracts</div>
+            </div>
+            <div class="card-body">
+                <p>Research into remote administration tooling, detection evasion, and behavioral analysis for defenders.</p>
+                <ul class="details-list">
+                    <li>Persistence logic templates</li>
+                    <li>Keylogger conceptual stubs</li>
+                    <li>Privilege escalation prompts</li>
+                </ul>
+                <div class="address-box" id="addr4">
+                    <span>USDT (TRC20):</span> TQm9JL3R...xVk2P
+                </div>
+                <button class="copy-btn" data-address="TQm9JL3Rq8Xf5Yw7Hn2Bv6Ck9Lp1Mz4xVk2P">📋 COPY USDT</button>
+                <div class="note">→ TRC20 only. Minimum $40 equivalent.</div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 5 -->
+        <div class="card">
+            <div class="card-header">
+                <h3>UNDOCUMENTED OPSEC</h3>
+                <div class="price">$90 USD · 61 prompts + tradecraft archive</div>
+            </div>
+            <div class="card-body">
+                <p>Compilation of anonymization techniques, forensic countermeasures, and operational security prompts.</p>
+                <ul class="details-list">
+                    <li>Trail covering sequences</li>
+                    <li>Digital identity rotation</li>
+                    <li>Offline cashout scripts</li>
+                </ul>
+                <div class="address-box" id="addr5">
+                    <span>XMR:</span> 48eJh5Lm...9qW7x
+                </div>
+                <button class="copy-btn" data-address="48eJh5LmQ3rV8pN2xK7yG1zL9wT4fR6nM9qW7x">📋 COPY XMR</button>
+                <div class="note">→ XMR strongly preferred. Delivery within 24h.</div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 6 -->
+        <div class="card">
+            <div class="card-header">
+                <h3>DARK PATTERNS PROMPT SUITE</h3>
+                <div class="price">$25 USD · 103 general persuasion prompts</div>
+            </div>
+            <div class="card-body">
+                <p>Psychological manipulation patterns, urgency generators, authority constructs — academic analysis.</p>
+                <ul class="details-list">
+                    <li>Scarcity language templates</li>
+                    <li>Social proof generators</li>
+                    <li>Commitment escalation chains</li>
+                </ul>
+                <div class="address-box" id="addr6">
+                    <span>LTC:</span> LbTjM3x...qV2y
+                </div>
+                <button class="copy-btn" data-address="LbTjM3xR9pN7kL2wQ4zX6cV8bY1mH5fGqV2y">📋 COPY LTC</button>
+                <div class="note">→ Litecoin. 1 confirmation.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>✦ VAULT MARKET is an archival research platform. All materials are simulated or derived from public information. ✦</p>
+        <p><a href="#">PGP: 0x7F3A...9C2D</a> | <a href="#">Status: ONLINE</a> | <a href="#">Contact: archive@vaultmkt.online</a></p>
+        <p style="margin-top:1rem;">No server · No logs · Delivery by manual verification within 12-24 hours.</p>
+    </div>
+</div>
+
+<script>
+    // Copy functionality
+    const copyButtons = document.querySelectorAll('.copy-btn');
+    copyButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            const address = this.getAttribute('data-address');
+            if (!address) return;
+            navigator.clipboard.writeText(address).then(() => {
+                const originalText = this.innerText;
+                this.innerText = '✓ COPIED';
+                setTimeout(() => {
+                    this.innerText = originalText;
+                }, 1500);
+            }).catch(() => {
+                alert('Manual copy: ' + address);
+            });
+        });
+    });
+</script>
+</body>
+</html>
