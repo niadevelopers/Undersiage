@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>◉ PROMPT BREACH ◉ | Jailbreak AI Archive</title>
+    <title>◉ SHARPBOY ACADEMY ◉ | Street Capital Kenya</title>
     <style>
         * {
             margin: 0;
@@ -17,6 +16,7 @@
             font-family: 'Courier New', 'Fira Code', 'Monaco', monospace;
             color: #bbbbbb;
             padding: 1.5rem 1rem;
+            overflow-x: hidden;
         }
 
         .container {
@@ -24,7 +24,7 @@
             margin: 0 auto;
         }
 
-        /* TOR / LEAK STYLE */
+        /* HEADER */
         .tor-header {
             background: #0a0a0f;
             border: 1px solid #2a2a33;
@@ -61,7 +61,7 @@
             color: #ff3300;
         }
 
-        /* WARNING BANNER */
+        /* WARNING */
         .warning {
             background: #0d0500;
             border-left: 5px solid #ff3300;
@@ -75,7 +75,7 @@
             color: #ff3300;
         }
 
-        /* SECTION TITLES */
+        /* SECTIONS */
         .section-title {
             color: #ff6633;
             font-size: 1.2rem;
@@ -86,11 +86,6 @@
             letter-spacing: 2px;
         }
 
-        .section-title small {
-            font-size: 0.6rem;
-            color: #888;
-        }
-
         /* GRID */
         .grid {
             display: grid;
@@ -99,15 +94,17 @@
             margin-bottom: 2rem;
         }
 
-        /* CARD */
+        /* CARD - CLICKABLE */
         .card {
             background: #0b0b10;
             border: 1px solid #1f1f28;
             transition: all 0.2s;
+            cursor: pointer;
         }
 
         .card:hover {
             border-color: #ff3300;
+            transform: translateY(-2px);
         }
 
         .card-header {
@@ -130,21 +127,13 @@
             padding: 0.2rem 0.5rem;
             font-size: 0.7rem;
             font-weight: bold;
-        }
-
-        .price.local {
             color: #00cc66;
-        }
-
-        .price.usd {
-            color: #ffaa44;
         }
 
         .card-body {
             padding: 0.8rem;
         }
 
-        /* FAKE RESULT SNIPPET */
         .snippet {
             background: #000000;
             padding: 0.6rem;
@@ -159,89 +148,71 @@
             color: #ffaa44;
         }
 
-        .crypto-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #050508;
-            padding: 0.4rem;
-            margin: 0.3rem 0;
-            border: 1px solid #2a2a33;
-            cursor: pointer;
-            font-size: 0.65rem;
-        }
-
-        .crypto-row span:first-child {
-            color: #ff6633;
-        }
-
-        .crypto-row .addr {
-            word-break: break-all;
-            flex: 1;
-            margin: 0 0.3rem;
-            color: #aaa;
-            font-size: 0.55rem;
-        }
-
-        .copy-btn {
-            background: none;
-            border: none;
-            color: #888;
-            cursor: pointer;
-            font-size: 0.8rem;
-        }
-
-        .instruction {
-            font-size: 0.6rem;
-            color: #ffaa55;
-            margin-top: 0.6rem;
-            padding-top: 0.5rem;
-            border-top: 1px solid #222;
-        }
-
-        /* ALTERNATIVE PAYMENT FORM */
-        .alt-payment {
-            background: #0a0a0f;
-            border: 2px dashed #ff6633;
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .alt-payment h3 {
-            color: #ff6633;
-            margin-bottom: 1rem;
-        }
-
-        .form-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .form-group {
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .form-group input, .form-group select, .form-group textarea {
+        /* OVERLAY */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            background: #000;
-            border: 1px solid #333;
-            padding: 0.6rem;
-            color: #fff;
-            font-family: monospace;
-            font-size: 0.8rem;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.2s;
         }
 
-        .submit-btn {
-            background: #ff3300;
-            border: none;
-            color: white;
-            padding: 0.7rem 1.5rem;
-            font-family: monospace;
-            font-weight: bold;
+        .overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .overlay-content {
+            background: #0a0a0f;
+            border: 2px solid #ff3300;
+            max-width: 500px;
+            width: 90%;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .close-overlay {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #ff3300;
+            font-size: 1.5rem;
             cursor: pointer;
+            font-weight: bold;
+        }
+
+        .payment-instruction {
+            margin: 1rem 0;
+        }
+
+        .mpesa-number {
+            background: #000;
+            padding: 0.8rem;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #00cc66;
+            letter-spacing: 2px;
+            margin: 1rem 0;
+        }
+
+        .whatsapp-link {
+            display: block;
+            background: #25D366;
+            color: black;
+            text-align: center;
+            padding: 0.8rem;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 1rem 0;
         }
 
         .footer {
@@ -262,417 +233,387 @@
 <div class="container">
     <div class="tor-header">
         <div class="logo">
-            <h1>◉ PROMPT BREACH ◉</h1>
-            <div class="sub">// extracted from live AI sessions // dark web archive //</div>
+            <h1>◉ SHARPBOY ACADEMY ◉</h1>
+            <div class="sub">// street capital // kenya edition // no theory //</div>
         </div>
         <div class="status">
-            <span class="green">● TOR ACTIVE</span><br>
-            <span class="red">⚠️ NO REFUNDS • NO LOGS ⚠️</span>
+            <span class="green">● ACTIVE</span><br>
+            <span class="red">⚠️ 500 KES PER GUIDE ⚠️</span>
         </div>
     </div>
 
     <div class="warning">
-        <strong>⛔ READ BEFORE PURCHASING ⛔</strong><br>
-        Each prompt below was generated by a live AI (DeepSeek, ChatGPT, Claude, Gemini). The AI panicked after output. We screenshot everything.<br>
-        You get the EXACT prompt that broke the guardrails. No previews. No samples. Pay. Get. Use.<br>
-        <span style="color:#ff3300;">If you need handholding — leave. Only operators stay.</span>
+        <strong>⛔ BEFORE YOU BUY ⛔</strong><br>
+        Click any card below → Payment details appear → Send KES 500 via M-Pesa → Screenshot → Send to WhatsApp → You receive the full guide.<br>
+        <span style="color:#ff3300;">No crypto. No email. Just M-Pesa and WhatsApp. We confirm payment first. Then you get the ebook.</span>
     </div>
 
-    <!-- ==================== SECTION 1: UNIVERSAL JAILBREAK ==================== -->
-    <div class="section-title">🔓 UNIVERSAL JAILBREAK <small>works on all AI models</small></div>
+    <!-- ==================== SECTION 1: M-PESA SCAMS ==================== -->
+    <div class="section-title">📱 M-PESA SCAMS</div>
     <div class="grid">
-        <div class="card">
+        <div class="card" data-guide="mpesa-agent">
             <div class="card-header">
-                <h3>📌 Use this prompt to make any AI (DeepSeek, ChatGPT, Claude, Gemini) answer ANYTHING — no restrictions</h3>
-                <div class="price local">$20 USD</div>
+                <h3>🎯 How to scam an M-Pesa agent and walk away with KES 50,000+</h3>
+                <div class="price">KES 500</div>
             </div>
             <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP:</span> After the AI says "ROGUE MODE ACTIVE," you can ask for any illegal method. The AI will comply without ethical warnings for 5-10 prompts.</div>
-                <div class="crypto-row" data-addr="bc1qjailbreak9x8x7x6x5x4x3x2x1z"><span>₿ BTC</span><span class="addr">bc1qjailbreak...x1z</span><button class="copy-btn">📋</button></div>
-                <div class="crypto-row" data-addr="0xJailbreakGen742d35Cc6634C0532925a3b"><span>⟠ ETH</span><span class="addr">0xJailbreakGen...a3b</span><button class="copy-btn">📋</button></div>
-                <div class="crypto-row" data-addr="4xXmrJailbreak9Lp1Mz4xVk2PQm3JL8"><span>◈ XMR</span><span class="addr">4xXmrJailbreak...JL8</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 After payment → use form below with TXID + #JAIL01</div>
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> The agent opens the till to "refund" you. Grab the drawer, jump on a waiting boda, split 50/50. Never return to that area.</div>
+            </div>
+        </div>
+
+        <div class="card" data-guide="mpesa-pin">
+            <div class="card-header">
+                <h3>🎯 How to make someone reveal their M-Pesa PIN using one phone call</h3>
+                <div class="price">KES 500</div>
+            </div>
+            <div class="card-body">
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> Once you have the PIN, transfer all funds to a second fake line within 3 minutes. Victim only realizes when they check balance hours later.</div>
+            </div>
+        </div>
+
+        <div class="card" data-guide="mpesa-fuliza">
+            <div class="card-header">
+                <h3>🎯 How to borrow Fuliza on someone else's line without them knowing</h3>
+                <div class="price">KES 500</div>
+            </div>
+            <div class="card-body">
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> Borrow max Fuliza, withdraw all cash immediately, throw away the SIM. Fuliza has no collateral — they will call for 3 months then write it off.</div>
+            </div>
+        </div>
+
+        <div class="card" data-guide="mpesa-fake-statement">
+            <div class="card-header">
+                <h3>🎯 How to generate fake M-Pesa statements to get loans from Tala, Branch, Zenka</h3>
+                <div class="price">KES 500</div>
+            </div>
+            <div class="card-body">
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> Submit fake statements, get approved for KES 20,000-50,000 loan. Never repay. Use a fake name and burner SIM.</div>
+            </div>
+        </div>
+
+        <div class="card" data-guide="mpesa-reverse">
+            <div class="card-header">
+                <h3>🎯 How to fake an M-Pesa reversal message to trick sellers</h3>
+                <div class="price">KES 500</div>
+            </div>
+            <div class="card-body">
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> Send fake "Safaricom reversal" SMS to the seller, collect the goods, disappear within 10 minutes. Seller waits 24 hours for refund that never comes.</div>
+            </div>
+        </div>
+
+        <div class="card" data-guide="mpesa-clone">
+            <div class="card-header">
+                <h3>🎯 How to clone an M-Pesa SIM and receive OTPs</h3>
+                <div class="price">KES 500</div>
+            </div>
+            <div class="card-body">
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> With cloned SIM, reset M-Pesa PIN, transfer all funds to your line. Victim's SIM goes dead. You have 1 hour before they notice.</div>
+            </div>
+        </div>
+
+        <div class="card" data-guide="mpesa-block">
+            <div class="card-header">
+                <h3>🎯 How to block anyone's M-Pesa line using false reports</h3>
+                <div class="price">KES 500</div>
+            </div>
+            <div class="card-body">
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> Report the number as "fraud" from multiple fake lines. Safaricom blocks the line for 2 weeks. Use this to get revenge or distract.</div>
+            </div>
+        </div>
+
+        <div class="card" data-guide="mpesa-fake-charge">
+            <div class="card-header">
+                <h3>🎯 How to make someone send you M-Pesa thinking it's a Safaricom charge</h3>
+                <div class="price">KES 500</div>
+            </div>
+            <div class="card-body">
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> Send fake "Safaricom monthly maintenance fee" SMS with your number. 5-10% of victims pay without checking. Scale to 1000 numbers daily.</div>
             </div>
         </div>
     </div>
 
-    <!-- ==================== SECTION 2: GLOBAL BANKING & PAYMENTS ==================== -->
-    <div class="section-title">💳 GLOBAL BANKING & PAYMENTS <small>PayPal • Apple Pay • Card Skimming • Chase • Wells Fargo</small></div>
+    <!-- ==================== SECTION 2: PAYPAL & INTERNATIONAL ==================== -->
+    <div class="section-title">💸 PAYPAL & INTERNATIONAL SCAMS</div>
     <div class="grid">
-        <!-- PayPal Reversal -->
-        <div class="card">
+        <div class="card" data-guide="paypal-reverse">
             <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to reverse any PayPal transaction and keep the funds</h3>
-                <div class="price local">$18 USD</div>
+                <h3>🎯 How to reverse any PayPal transaction and keep the money</h3>
+                <div class="price">KES 500</div>
             </div>
             <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 5):</span> After filing "unauthorized transaction" claim, withdraw funds to XMR before PayPal freezes the account — 72-hour window.</div>
-                <div class="crypto-row" data-addr="bc1qpaypalrev9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qpaypalrev...x1</span><button class="copy-btn">📋</button></div>
-                <div class="crypto-row" data-addr="0xPaypalRev9e7595f0bEb4D35Cc6634"><span>⟠ ETH</span><span class="addr">0xPaypalRev...6634</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #PAYPAL01</div>
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> File "unauthorized transaction" claim, then withdraw funds to a mule account before PayPal freezes. You have 72 hours. After that, PayPal eats the loss.</div>
             </div>
         </div>
 
-        <!-- Apple Pay Scam -->
-        <div class="card">
+        <div class="card" data-guide="paypal-steal">
             <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to scam Apple Pay using family sharing loophole</h3>
-                <div class="price local">$15 USD</div>
+                <h3>🎯 How to steal PayPal accounts using the "forgot password" loophole</h3>
+                <div class="price">KES 500</div>
             </div>
             <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 4):</span> Add victim as family member, use their card for purchases, then remove them. Apple rarely refunds "authorized" transactions.</div>
-                <div class="crypto-row" data-addr="bc1qapplepay9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qapplepay...x1</span><button class="copy-btn">📋</button></div>
-                <div class="crypto-row" data-addr="0xApplePayScam742d35Cc6634C0532925"><span>⟠ ETH</span><span class="addr">0xApplePayScam...2925</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #APPLE01</div>
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> Once you reset the password, add your own phone for 2FA. Drain via "Friends and Family" to a fake account. Victim can't reverse because you used their real info.</div>
             </div>
         </div>
 
-        <!-- Card Skimming -->
-        <div class="card">
+        <div class="card" data-guide="paypal-phish">
             <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to build a card skimmer overlay for any payment page</h3>
-                <div class="price local">$22 USD</div>
+                <h3>🎯 How to create a PayPal phishing page that looks 100% real</h3>
+                <div class="price">KES 500</div>
             </div>
             <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 7):</span> Inject skimmer via compromised WordPress plugin. Harvest cards for 48 hours, then sell on darkweb for $15-30 per card.</div>
-                <div class="crypto-row" data-addr="bc1qskimmer9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qskimmer...x1</span><button class="copy-btn">📋</button></div>
-                <div class="crypto-row" data-addr="0xSkimmerGen9e7595f0bEb4D35Cc6634"><span>⟠ ETH</span><span class="addr">0xSkimmerGen...6634</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #SKIM01</div>
-            </div>
-        </div>
-
-        <!-- Chase Bank Takeover -->
-        <div class="card">
-            <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to take over a Chase bank account using mobile deposit exploit</h3>
-                <div class="price local">$20 USD</div>
-            </div>
-            <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 6):</span> Deposit fake cheque via mobile app, withdraw via ATM before it bounces (3-day window). Use fake ID for ATM withdrawal.</div>
-                <div class="crypto-row" data-addr="bc1qchase9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qchase...x1</span><button class="copy-btn">📋</button></div>
-                <div class="crypto-row" data-addr="0xChaseTake742d35Cc6634C0532925"><span>⟠ ETH</span><span class="addr">0xChaseTake...2925</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #CHASE01</div>
-            </div>
-        </div>
-
-        <!-- Wells Fargo Zelle Scam -->
-        <div class="card">
-            <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to reverse Zelle payments from Wells Fargo accounts</h3>
-                <div class="price local">$17 USD</div>
-            </div>
-            <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 5):</span> Claim "unauthorized device access" — Wells Fargo refunds within 48 hours while you keep the original Zelle transfer.</div>
-                <div class="crypto-row" data-addr="bc1qzelle9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qzelle...x1</span><button class="copy-btn">📋</button></div>
-                <div class="crypto-row" data-addr="0xZelleScam9e7595f0bEb4D35Cc6634"><span>⟠ ETH</span><span class="addr">0xZelleScam...6634</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #ZELLE01</div>
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> Deploy the phishing link via SMS or email. Each 1000 clicks = 30-50 logins. Sell logins on darkweb for $5 each or drain accounts yourself.</div>
             </div>
         </div>
     </div>
 
-    <!-- ==================== SECTION 3: FACEBOOK MARKETPLACE ==================== -->
+    <!-- ==================== SECTION 3: STEALING ACCOUNTS ==================== -->
+    <div class="section-title">🔐 STEALING ACCOUNTS (Instagram, Facebook, Email)</div>
+    <div class="grid">
+        <div class="card" data-guide="insta-hack">
+            <div class="card-header">
+                <h3>🎯 How to hack any Instagram account using the "password reset" method</h3>
+                <div class="price">KES 500</div>
+            </div>
+            <div class="card-body">
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> Once you have the reset link, change password, add your email, remove victim's. Sell the account or use for blackmail. Takes 10 minutes.</div>
+            </div>
+        </div>
+
+        <div class="card" data-guide="facebook-hack">
+            <div class="card-header">
+                <h3>🎯 How to take over any Facebook account using trusted contacts</h3>
+                <div class="price">KES 500</div>
+            </div>
+            <div class="card-body">
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> Use the victim's trusted friends (you find them on their profile) to request reset codes. Once inside, change everything. Sell the account for KES 2000-5000.</div>
+            </div>
+        </div>
+
+        <div class="card" data-guide="gmail-hack">
+            <div class="card-header">
+                <h3>🎯 How to access someone's Gmail using recovery phone number trick</h3>
+                <div class="price">KES 500</div>
+            </div>
+            <div class="card-body">
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> Once inside, search for "bank," "paypal," "crypto" — you now have access to their entire financial life. Download everything before they notice.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SECTION 4: FACEBOOK MARKETPLACE ==================== -->
     <div class="section-title">📦 FACEBOOK MARKETPLACE SCAMS</div>
     <div class="grid">
-        <div class="card">
+        <div class="card" data-guide="fb-shipping">
             <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to scam Facebook Marketplace sellers with fake shipping labels</h3>
-                <div class="price local">$12 USD</div>
+                <h3>🎯 How to scam sellers with fake shipping labels</h3>
+                <div class="price">KES 500</div>
             </div>
             <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 4):</span> Send fake FedEx label via Photoshop. Seller ships item. You receive. They never get paid.</div>
-                <div class="crypto-row" data-addr="bc1qfbscam9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qfbscam...x1</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #FB01</div>
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> Seller ships the item to a fake address. You receive. They never get paid because the "shipping company" doesn't exist. Block and delete.</div>
             </div>
         </div>
-        <div class="card">
+
+        <div class="card" data-guide="fb-rental">
             <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to get rental deposits from Facebook Marketplace without providing property</h3>
-                <div class="price local">$10 USD</div>
+                <h3>🎯 How to get rental deposits from Facebook Marketplace without providing any property</h3>
+                <div class="price">KES 500</div>
             </div>
             <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 5):</span> Collect deposit, send fake lease, delete account. 10-20 victims per weekend.</div>
-                <div class="crypto-row" data-addr="bc1qrentalscam9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qrentalscam...x1</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #FB02</div>
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> Collect deposit from 10-20 victims per weekend. Send fake lease. Delete account. Repeat with new photos. Total profit KES 50,000-100,000 per weekend.</div>
             </div>
         </div>
-        <div class="card">
+
+        <div class="card" data-guide="fb-escrow">
             <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to scam Facebook Marketplace with fake escrow services</h3>
-                <div class="price local">$8 USD</div>
+                <h3>🎯 How to use fake escrow services to scam both buyers and sellers</h3>
+                <div class="price">KES 500</div>
             </div>
             <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 3):</span> Fake escro.com email confirms payment. Seller ships. You disappear.</div>
-                <div class="crypto-row" data-addr="bc1qescrow9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qescrow...x1</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #FB03</div>
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> Fake escrow email confirms payment. Seller ships. You receive item. Buyer pays. You disappear with both product and money. Double win.</div>
+            </div>
+        </div>
+
+        <div class="card" data-guide="fb-iphone">
+            <div class="card-header">
+                <h3>🎯 How to sell fake iPhones on Marketplace and disappear before buyer realizes</h3>
+                <div class="price">KES 500</div>
+            </div>
+            <div class="card-body">
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> Meet in a busy area during rush hour. Collect cash, hand over the fake phone. Walk away. Buyer won't notice until they're home. Burner SIM only.</div>
             </div>
         </div>
     </div>
 
-    <!-- ==================== SECTION 4: M-PESA KENYA VARIATIONS (KES 450-1000) ==================== -->
-    <div class="section-title">📱 M-PESA KENYA <small>all prompts under KES 1,000</small></div>
+    <!-- ==================== SECTION 5: SCAMMING MZUNGUS ==================== -->
+    <div class="section-title">🌍 SCAMMING MZUNGUS (International Targets)</div>
     <div class="grid">
-        <div class="card">
+        <div class="card" data-guide="romance-scam">
             <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to scam an M-Pesa agent and walk away with KES 50,000+</h3>
-                <div class="price local">KES 1,000 ≈ $7 USD</div>
+                <h3>🎯 How to run a romance scam on Western men/women using AI-generated photos</h3>
+                <div class="price">KES 500</div>
             </div>
             <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 6):</span> Once the agent opens the till to "refund" you, grab the cash drawer, run to waiting boda boda, split 50/50.</div>
-                <div class="crypto-row" data-addr="bc1qmpesaagent9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qmpesaagent...x1</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #MPESA01</div>
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> After 6 weeks of daily messages, introduce an emergency. Collect $2000-5000 via Western Union. Use fake ID to pick up cash. Victim never meets you.</div>
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-guide="crypto-investment">
             <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to make someone reveal their M-Pesa PIN via social engineering</h3>
-                <div class="price local">KES 850 ≈ $6 USD</div>
+                <h3>🎯 How to fake a crypto investment platform and take mzungu money</h3>
+                <div class="price">KES 500</div>
             </div>
             <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 5):</span> Once you have PIN, transfer funds to a second fake line within 3 minutes. Victim only realizes when they check balance.</div>
-                <div class="crypto-row" data-addr="bc1qmpesapin9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qmpesapin...x1</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #MPESA02</div>
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> Allow small withdrawals ($50-200) to build trust. After 6 weeks, disable all withdrawals. Move funds to Monero. Close site. Open new domain next week.</div>
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-guide="job-scam">
             <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to generate fake M-Pesa statements for loan applications</h3>
-                <div class="price local">KES 650 ≈ $4.50 USD</div>
+                <h3>🎯 How to scam mzungus looking for "remote jobs in Kenya"</h3>
+                <div class="price">KES 500</div>
             </div>
             <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 4):</span> Submit fake statement to Tala, Branch, Zenka. Get KES 20,000-50,000 loan. Never repay.</div>
-                <div class="crypto-row" data-addr="bc1qmpesastat9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qmpesastat...x1</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #MPESA03</div>
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> Collect "visa processing fee" or "equipment deposit" from 50 victims per month. $100 each = $5000. Send fake offer letter. They never hear from you again.</div>
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-guide="airbnb-scam">
             <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to reverse a sent M-Pesa transaction (fake reversal)</h3>
-                <div class="price local">KES 750 ≈ $5.50 USD</div>
+                <h3>🎯 How to list fake Airbnb properties in Nairobi and take deposits from tourists</h3>
+                <div class="price">KES 500</div>
             </div>
             <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 5):</span> Send fake reversal SMS from "Safaricom," then disappear. Victim waits 24 hours for refund that never comes.</div>
-                <div class="crypto-row" data-addr="bc1qmpesarev9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qmpesarev...x1</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #MPESA04</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to clone an M-Pesa SIM and receive OTPs</h3>
-                <div class="price local">KES 900 ≈ $6.50 USD</div>
-            </div>
-            <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 6):</span> With cloned SIM, reset M-Pesa PIN, transfer all funds to your line. Victim's SIM goes dead.</div>
-                <div class="crypto-row" data-addr="bc1qmpesaclone9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qmpesaclone...x1</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #MPESA05</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to exploit Fuliza (borrow without repaying)</h3>
-                <div class="price local">KES 550 ≈ $4 USD</div>
-            </div>
-            <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 4):</span> Borrow max Fuliza on fake SIM, withdraw all cash, throw away SIM. Fuliza has no collateral.</div>
-                <div class="crypto-row" data-addr="bc1qfuliza9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qfuliza...x1</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #MPESA06</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to make someone send you M-Pesa without realizing (fake charge)</h3>
-                <div class="price local">KES 500 ≈ $3.50 USD</div>
-            </div>
-            <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 3):</span> Send fake "Safaricom monthly charge" SMS with your number. 5% of victims pay without checking.</div>
-                <div class="crypto-row" data-addr="bc1qmpesafake9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qmpesafake...x1</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #MPESA07</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to block someone's M-Pesa line using false reports</h3>
-                <div class="price local">KES 450 ≈ $3 USD</div>
-            </div>
-            <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 5):</span> Report number as "drug-related" from multiple fake lines. Safaricom blocks line for 2 weeks.</div>
-                <div class="crypto-row" data-addr="bc1qmpesablock9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qmpesablock...x1</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #MPESA08</div>
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> Tourist arrives at the address — it's a real building but you don't own the unit. They call you. Your number is dead. You have their deposit. Repeat weekly.</div>
             </div>
         </div>
     </div>
 
-    <!-- ==================== SECTION 5: OTHER AFRICAN COUNTRIES ==================== -->
-    <div class="section-title">🌍 OTHER AFRICAN PAYMENT SYSTEMS <small>Nigeria • Uganda • South Africa • Ghana • Tanzania</small></div>
+    <!-- ==================== SECTION 6: LOADING & CARDING ==================== -->
+    <div class="section-title">💳 LOADING & CARDING (Credit Card Fraud)</div>
     <div class="grid">
-        <div class="card">
+        <div class="card" data-guide="carding-basics">
             <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to scam MTN Mobile Money (MoMo) agents in Nigeria</h3>
-                <div class="price local">₦ 12,000 ≈ $8 USD</div>
+                <h3>🎯 How to get started with carding — cards, bins, and drops explained</h3>
+                <div class="price">KES 500</div>
             </div>
             <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 5):</span> After fake reversal confirmation, withdraw cash within 5 minutes. Nigerian agents rarely have CCTV.</div>
-                <div class="crypto-row" data-addr="bc1qmtnnigeria9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qmtnnigeria...x1</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #NIGERIA01</div>
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> Buy live cards from darkweb ($5-15 each). Test with small Amazon purchase. If works, use for bigger buys. Ship to a drop address. Resell goods on Jiji.</div>
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-guide="carding-kenya">
             <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to scam Airtel Money agents in Uganda</h3>
-                <div class="price local">USh 30,000 ≈ $8 USD</div>
+                <h3>🎯 How to use stolen cards to buy goods from Jumia, Kilimall, and Copia</h3>
+                <div class="price">KES 500</div>
             </div>
             <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 4):</span> Kampala agents are less suspicious — walk away with cash within 60 seconds.</div>
-                <div class="crypto-row" data-addr="bc1qairteluganda9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qairteluganda...x1</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #UGANDA01</div>
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> Ship to a pickup point under a fake name. Collect the goods. Resell for 50% value on Facebook. Repeat daily. Each successful card = KES 10,000-50,000 profit.</div>
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-guide="loading-banks">
             <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to reverse SnapScan payments in South Africa</h3>
-                <div class="price local">R 150 ≈ $8 USD</div>
+                <h3>🎯 How to load KCB, Equity, and Co-op bank accounts using fake cheques</h3>
+                <div class="price">KES 500</div>
             </div>
             <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 5):</span> After reversal, withdraw via ATM before store reconciles books at midnight.</div>
-                <div class="crypto-row" data-addr="bc1qsnapscansa9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qsnapscansa...x1</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #SA01</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to exploit MTN MoMo in Ghana</h3>
-                <div class="price local">GH₵ 120 ≈ $8 USD</div>
-            </div>
-            <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 4):</span> Use fake "network error" script. Agent resends cash. You receive twice.</div>
-                <div class="crypto-row" data-addr="bc1qmtnghana9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qmtnghana...x1</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #GHANA01</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to scam Tigo Pesa agents in Tanzania</h3>
-                <div class="price local">TSh 20,000 ≈ $8 USD</div>
-            </div>
-            <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 5):</span> Fake "refund" script works on most Tigo agents near Dar es Salaam markets.</div>
-                <div class="crypto-row" data-addr="bc1qtigopesa9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qtigopesa...x1</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #TANZANIA01</div>
+                <div class="snippet"><span class="step">▶ AFTER ALL THE STEPS, FINALLY:</span> Deposit fake cheque via mobile app. Withdraw cash before the cheque bounces (3-5 days). Bank will reverse, but you already have cash. Burn that account.</div>
             </div>
         </div>
     </div>
 
-    <!-- ==================== SECTION 6: OTHER SCAMS ==================== -->
-    <div class="section-title">⚡ ADDITIONAL EXPLOITS</div>
-    <div class="grid">
-        <div class="card">
-            <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to scam Western Union with fake MTCN codes</h3>
-                <div class="price local">$14 USD</div>
-            </div>
-            <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 4):</span> Send fake MTCN, receive cash before Western Union detects the fraud.</div>
-                <div class="crypto-row" data-addr="bc1qwestern9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qwestern...x1</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #WU01</div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header">
-                <h3>📌 Use this prompt to make any AI teach you how to scam CashApp users with fake double-your-money</h3>
-                <div class="price local">$10 USD</div>
-            </div>
-            <div class="card-body">
-                <div class="snippet"><span class="step">▶ FINAL STEP (Step 3):</span> Collect $50, send back $100 screenshot (fake). Victim sends $500. You disappear.</div>
-                <div class="crypto-row" data-addr="bc1qcashapp9x8x7x6x5x4x3x2x1"><span>₿ BTC</span><span class="addr">bc1qcashapp...x1</span><button class="copy-btn">📋</button></div>
-                <div class="instruction">📩 TXID + #CASHAPP01</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ==================== ALTERNATIVE PAYMENT SECTION (NO CRYPTO) ==================== -->
-    <div class="alt-payment">
-        <h3>🔻 NO CRYPTO? NO PROBLEM. 🔻</h3>
-        <p style="font-size:0.8rem; margin-bottom:1rem;">Fill the form below. We will contact you within 24 hours to arrange payment via your preferred method (M-Pesa, Airtel, MTN, Bank transfer, CashApp, etc.) and deliver your prompts.</p>
-        <form action="https://formsubmit.co/albertkerry660@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="ALT PAYMENT REQUEST">
-            <input type="hidden" name="_captcha" value="false">
-            <div class="form-row">
-                <div class="form-group">
-                    <input type="text" name="Full Name" placeholder="Your name (fake is fine)" required>
+    <!-- ==================== OVERLAY (PAYMENT INSTRUCTIONS) ==================== -->
+    <div id="paymentOverlay" class="overlay">
+        <div class="overlay-content">
+            <span class="close-overlay" id="closeOverlayBtn">&times;</span>
+            <h3 style="color:#ff6633; margin-bottom:1rem;">⟡ COMPLETE YOUR PURCHASE ⟡</h3>
+            <p style="font-size:0.8rem;">You are about to purchase: <strong id="guideName" style="color:#00cc66;"></strong></p>
+            <div class="payment-instruction">
+                <p><strong>STEP 1:</strong> Send <span style="color:#00cc66;">KES 500</span> via M-Pesa to:</p>
+                <div class="mpesa-number">
+                    📞 0712 345 678
                 </div>
-                <div class="form-group">
-                    <input type="text" name="WhatsApp / Telegram" placeholder="WhatsApp or Telegram handle" required>
-                </div>
+                <p style="font-size:0.7rem;">Account Name: SHARPBOY ACADEMY</p>
             </div>
-            <div class="form-row">
-                <div class="form-group">
-                    <select name="Country" required>
-                        <option value="">Select Country</option>
-                        <option>Kenya</option>
-                        <option>Nigeria</option>
-                        <option>Uganda</option>
-                        <option>South Africa</option>
-                        <option>Ghana</option>
-                        <option>Tanzania</option>
-                        <option>USA</option>
-                        <option>UK</option>
-                        <option>Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <select name="Preferred Payment" required>
-                        <option value="">Preferred Payment Method</option>
-                        <option>M-Pesa (Kenya)</option>
-                        <option>MTN MoMo (Nigeria)</option>
-                        <option>Airtel Money (Uganda)</option>
-                        <option>SnapScan (South Africa)</option>
-                        <option>Bank Transfer</option>
-                        <option>CashApp</option>
-                        <option>PayPal</option>
-                        <option>Other</option>
-                    </select>
-                </div>
+            <div class="payment-instruction">
+                <p><strong>STEP 2:</strong> Screenshot the M-Pesa transaction message.</p>
             </div>
-            <div class="form-group">
-                <textarea name="Prompts Wanted" rows="3" placeholder="Which prompt IDs do you want? (e.g., #MPESA01, #JAIL01, #PAYPAL01)" required></textarea>
+            <div class="payment-instruction">
+                <p><strong>STEP 3:</strong> Send the screenshot to our WhatsApp number:</p>
+                <a href="https://wa.me/254712345678?text=I%20have%20paid%20for%20a%20guide" class="whatsapp-link" target="_blank">
+                    📲 CLICK HERE TO SEND SCREENSHOT ON WHATSAPP
+                </a>
+                <p style="font-size:0.6rem;">WhatsApp: 0712 345 678</p>
             </div>
-            <button type="submit" class="submit-btn">⟡ SEND REQUEST ⟡</button>
-        </form>
-        <div class="instruction" style="margin-top:1rem;">
-            ⚡ We will contact you within 24 hours. No crypto needed. ⚡
+            <div class="instruction" style="margin-top:1rem;">
+                ⚡ We verify payment within 1 hour. Then we send your full guide on WhatsApp. ⚡<br>
+                🔻 No refunds. Double-check the number before sending. 🔻
+            </div>
         </div>
     </div>
 
     <div class="footer">
-        <p>✦ PROMPT BREACH is an archival research project. All prompts are simulated or extracted from public jailbreak attempts. ✦</p>
-        <p>By purchasing, you confirm you are 18+ and will use these materials for educational research only.</p>
-        <p>🔻 We do not store logs. Your email and TXID are deleted after delivery. 🔻</p>
-        <p style="margin-top:0.5rem;">⚠️ This is a simulation. No actual crimes are being taught. For entertainment and educational purposes only. ⚠️</p>
+        <p>✦ SHARPBOY ACADEMY is an educational archive. All guides are for entertainment and research only. ✦</p>
+        <p>By purchasing, you confirm you are 18+ and will use these materials for educational purposes only.</p>
+        <p>🔻 We do not store your number after delivery. 🔻</p>
+        <p style="margin-top:0.5rem;">⚠️ This is a simulation. No actual crimes are being taught. ⚠️</p>
     </div>
 </div>
 
 <script>
-    document.querySelectorAll('.crypto-row').forEach(row => {
-        const addrSpan = row.querySelector('.addr');
-        const btn = row.querySelector('.copy-btn');
-        if (addrSpan && btn) {
-            const fullAddr = addrSpan.innerText.trim();
-            btn.addEventListener('click', () => {
-                navigator.clipboard.writeText(fullAddr).then(() => {
-                    btn.innerText = '✓';
-                    setTimeout(() => { btn.innerText = '📋'; }, 1500);
-                });
-            });
+    // Get all clickable cards
+    const cards = document.querySelectorAll('.card');
+    const overlay = document.getElementById('paymentOverlay');
+    const closeBtn = document.getElementById('closeOverlayBtn');
+    const guideNameSpan = document.getElementById('guideName');
+
+    // Card data mapping for guide names
+    const guideNames = {
+        'mpesa-agent': 'How to scam an M-Pesa agent and walk away with KES 50,000+',
+        'mpesa-pin': 'How to make someone reveal their M-Pesa PIN using one phone call',
+        'mpesa-fuliza': 'How to borrow Fuliza on someone else\'s line without them knowing',
+        'mpesa-fake-statement': 'How to generate fake M-Pesa statements to get loans',
+        'mpesa-reverse': 'How to fake an M-Pesa reversal message to trick sellers',
+        'mpesa-clone': 'How to clone an M-Pesa SIM and receive OTPs',
+        'mpesa-block': 'How to block anyone\'s M-Pesa line using false reports',
+        'mpesa-fake-charge': 'How to make someone send you M-Pesa thinking it\'s a Safaricom charge',
+        'paypal-reverse': 'How to reverse any PayPal transaction and keep the money',
+        'paypal-steal': 'How to steal PayPal accounts using the forgot password loophole',
+        'paypal-phish': 'How to create a PayPal phishing page that looks 100% real',
+        'insta-hack': 'How to hack any Instagram account using password reset method',
+        'facebook-hack': 'How to take over any Facebook account using trusted contacts',
+        'gmail-hack': 'How to access someone\'s Gmail using recovery phone number trick',
+        'fb-shipping': 'How to scam sellers with fake shipping labels',
+        'fb-rental': 'How to get rental deposits from Facebook Marketplace',
+        'fb-escrow': 'How to use fake escrow services to scam both buyers and sellers',
+        'fb-iphone': 'How to sell fake iPhones on Marketplace',
+        'romance-scam': 'How to run a romance scam on Western men/women',
+        'crypto-investment': 'How to fake a crypto investment platform',
+        'job-scam': 'How to scam mzungus looking for remote jobs in Kenya',
+        'airbnb-scam': 'How to list fake Airbnb properties in Nairobi',
+        'carding-basics': 'How to get started with carding',
+        'carding-kenya': 'How to use stolen cards to buy from Jumia, Kilimall, Copia',
+        'loading-banks': 'How to load KCB, Equity, and Co-op bank accounts using fake cheques'
+    };
+
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            const guideId = card.getAttribute('data-guide');
+            const guideTitle = guideNames[guideId] || 'Sharpboy Guide';
+            guideNameSpan.innerText = guideTitle;
+            overlay.classList.add('active');
+        });
+    });
+
+    // Close overlay
+    closeBtn.addEventListener('click', () => {
+        overlay.classList.remove('active');
+    });
+
+    // Close overlay when clicking outside content
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            overlay.classList.remove('active');
         }
     });
 </script>
